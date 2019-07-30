@@ -1,0 +1,23 @@
+{
+    "name": "slim-propel-broker/slim-propel-broker",
+    "description": "",
+    "type": "library",
+    "keywords": ["slim framework", "propel orm", "broker"],
+    "license" : "BSD-3-Clause",
+    "authors" : [
+        {
+            "name": "SPB Team"
+        }
+    ],
+    "require": {
+        "php": ">=5.5"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    },
+	"autoload": {
+		"files": ["src/broker.php"]
+	}
+}
