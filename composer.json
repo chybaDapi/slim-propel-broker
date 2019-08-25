@@ -17,7 +17,10 @@
             "dev-master": "1.0.x-dev"
         }
     },
-	"autoload": {
-		"files": ["src/broker.php"]
-	}
+    "autoload": {
+        "files": ["src/broker.php"]
+    },
+    "config": {
+        "discard-changes": true
+    },
 }
